@@ -12,7 +12,13 @@ import org.testng.Assert;
 public class HomeService {
 
     public static void isViewLoaded() {
-        MobileActionManager.waitVisibility(HomeConstants.SIGN_OUT_BUTTON_LOCATOR);
-        Assert.assertTrue(MobileActionManager.isVisible(HomeConstants.CHANGE_LANGUAGE_BUTTON_LOCATOR), HomeConstants.VIEW_NOT_DISPLAYED_MESSAGE);
+        MobileActionManager.waitVisibility(HomeConstants.TITLE_LOCATOR);
+        Assert.assertTrue(MobileActionManager.isVisible(HomeConstants.TITLE_LOCATOR), HomeConstants.VIEW_NOT_DISPLAYED_MESSAGE);
+    }
+
+    public static void changePasswordView() {
+        MobileActionManager.click(HomeConstants.HAMBURGER_BUTTON_LOCATOR);
+        MobileActionManager.waitVisibility(HomeConstants.CHANGE_PASSWORD_VIEW_BUTTON_LOCATOR);
+        MobileActionManager.click(HomeConstants.CHANGE_PASSWORD_VIEW_BUTTON_LOCATOR);
     }
 }
